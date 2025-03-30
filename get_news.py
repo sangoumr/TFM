@@ -1,0 +1,169 @@
+import requests
+import csv
+import numpy as np
+import os
+from constants import *
+from translate import google_translate
+from preproces_text import clean_text 
+from producer_news import send_producer, flush_producer
+
+
+def get_dayli_news(producer)->dict:
+    """ Get ISO CODES, download news from bouth API for all countris in iso codes list,
+        save them into each county file as csv, and call producer to sent news intro 
+        broker.
+    """
+    # Make dir news if not exist
+    os.makedirs(PATH_NEWS, exist_ok=True)
+
+    #GET ISO Country CODES and language iso codes: US and EU countries
+    try:
+        dict_iso_codes = dict()
+        # Obrim el fitxer CSV
+        with open(PATH_US_ISO, newline='', encoding='utf-8') as csvfile:
+            # Skip the column names
+            csvfile.readline()
+            lector = csv.reader(csvfile) 
+            paisos = np.array(list(lector))
+
+        # Get ISO Code
+        iso_code = paisos[:,-1]
+        iso_code_us = list(map(str.lower, iso_code))
+        dict_iso_codes['us'] = iso_code_us
+        #print('Iso codes for US: ', iso_code_us)
+
+        # Obrim el fitxer CSV
+        with open(PATH_UE_ISO, newline='', encoding='utf-8') as csvfile:
+            # Skip the column names
+            csvfile.readline()
+            lector = csv.reader(csvfile) 
+            paisos = np.array(list(lector))
+
+        # Get ISO Codes Counties and Languages
+        iso_codes = paisos[:,-2:]
+        iso_codes_eu = np.char.lower(iso_codes)
+        #print('Iso codes for EU: ',iso_codes_eu)
+        np.random.shuffle(iso_codes_eu)
+        dict_iso_codes['ue'] = iso_codes_eu
+
+        
+    except Exception as e:
+        print('ERROR - Reading ISO Codes: ',e)
+
+    # Count of downloaded and translated news.
+    recompte = {}
+
+    try:
+        
+        # GET data from NEWSAPI - UE countries
+        for iso_code in dict_iso_codes['ue']:
+            
+            try:
+                country_code = str(iso_code[0])
+                language_codes = iso_code[1]
+                
+                recompte[country_code] = [0,0]
+
+                # Select first language if country has more than one, for request news in a language of country.
+                if len(language_codes) == 2:
+
+                    language_request = language_codes
+                else:
+                    list_cod = language_codes.split(',')
+                    language_request = list_cod[0]
+
+                url = "https://newsdata.io/api/1/latest?apikey="+NEWS_DATA_IO_KEY+"&country="\
+                    +country_code+"&language="+language_request+"&size="+NEWS_UE_COUNTRIES
+
+                response = requests.get(url)
+                response.raise_for_status()
+                #print('Request status code NewsData.io: ', response.status_code)
+
+                response_json_ue = response.json()
+
+                # Check if file country exist
+                filename = PATH_NEWS+'news_'+country_code+'.csv'
+                file_exists = os.path.isfile(filename)
+                list_news = []
+                recompte[country_code][0] += len(response_json_ue['results'])
+
+                # Obrim el fitxer en mode append ('a') per afegir dades sense sobreescriure
+                with open(filename, mode="a", newline="", encoding="utf-8") as file:
+                    writer = csv.writer(file)
+                                    
+                    if not file_exists:
+                        writer.writerow(HEADERS)
+                    for news in response_json_ue['results']:
+                        
+                        title = clean_text(news['title'])
+                        description = clean_text(news['description']) if news['description'] is not None else ''
+                        
+                        # Get translation
+                        title_translated = google_translate(title,[language_request], LANGUAGE_TRANSLATION)
+                        desc_translated = google_translate(description,[language_request], LANGUAGE_TRANSLATION)
+                                                
+                        if None not in (title_translated, desc_translated) and country_code not in ISO_CODES_NO_TRANSLATION:
+                            # count news translated
+                            recompte[country_code][1] += 1
+                        
+                        news_line = [country_code, news['title'], news['description'], LANGUAGE_TRANSLATION,
+                                    title_translated, desc_translated, news['pubDate']]
+                        writer.writerow(news_line)
+                        list_news.append(news_line)
+                        
+                        send_producer(producer, TOPIC_NAME_UE, news_line)
+                    
+                    flush_producer(producer, list_news)
+
+            # If the request fails (404) then print the error.
+            except requests.exceptions.HTTPError as error:
+                print('ERROR - Request NewsData.io API fails: ', error, '\n', url)
+
+
+        # GET data from NEWSAPI - US
+        for iso_code in dict_iso_codes['us']:
+            recompte[iso_code] = [0,0]
+            try:        
+                url = "https://newsapi.org/v2/top-headlines?country="+iso_code+"&apiKey="+NEWS_API_KEY+"&pageSize="+NEWS_US
+                response_us = requests.get(url)
+                response_us.raise_for_status()
+                #print('Request status code NewsAPI: ', response_us.status_code)
+                response_json_us = response_us.json()
+                
+                # Check if exist
+                filename = PATH_NEWS+'news_'+iso_code+'.csv'
+                file_exists = os.path.isfile(filename)
+                list_news_us = []
+                recompte[iso_code][0] = len(response_json_us['articles'])
+
+                # Obrim el fitxer en mode append ('a') per afegir dades sense sobreescriure
+                with open(filename, mode="a", newline="", encoding="utf-8") as file:
+                    writer = csv.writer(file)
+                                
+                    if not file_exists:
+                        writer.writerow(HEADERS)
+                    
+                    for news in response_json_us['articles']:
+
+                        title = clean_text(news['title'])
+                        description = clean_text(news['description']) if news['description'] is not None else ''
+
+                        news_line = [iso_code, title, description, LANGUAGE_TRANSLATION,
+                                    title, description, news['publishedAt']]
+                        writer.writerow(news_line)
+                        list_news_us.append(news_line)
+                        
+                        send_producer(producer, TOPIC_NAME_US, news_line)
+                    
+                    flush_producer(producer, list_news_us)
+
+
+            # If the request fails (404) then print the error.
+            except requests.exceptions.HTTPError as error:
+                print('ERROR - Request NewsAPI fails: ', error)
+
+
+        return recompte
+    except Exception as e:
+        print('ERROR - Downloading News: ',e)
+    
