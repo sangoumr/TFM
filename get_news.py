@@ -27,7 +27,7 @@ def get_dayli_news(producer)->dict:
             paisos = np.array(list(lector))
 
         # Get ISO Code
-        iso_code = paisos[:,-1]
+        iso_code = paisos[:,2]
         iso_code_us = list(map(str.lower, iso_code))
         dict_iso_codes['us'] = iso_code_us
         #print('Iso codes for US: ', iso_code_us)
@@ -111,7 +111,7 @@ def get_dayli_news(producer)->dict:
                         writer.writerow(news_line)
                         list_news.append(news_line)
                         
-                        send_producer(producer, TOPIC_NAME_UE, news_line)
+                        send_producer(producer, TOPIC_NAME, news_line)
                     
                     flush_producer(producer, list_news)
 
@@ -153,7 +153,7 @@ def get_dayli_news(producer)->dict:
                         writer.writerow(news_line)
                         list_news_us.append(news_line)
                         
-                        send_producer(producer, TOPIC_NAME_US, news_line)
+                        send_producer(producer, TOPIC_NAME, news_line)
                     
                     flush_producer(producer, list_news_us)
 

@@ -28,8 +28,8 @@ tar -xvzf kafka_2.13-3.9.0.tgz
 mv kafka_2.13-3.9.0 ~
 
 # Editar fixer de configuració .bashrc afegint PATH per no posar la ruta sencera de les instruccions de kafka o executar-les desde la carpeta bin
-echo 'PATH="$PATH:~/kafka_2.13-3.9.0/bin"' >> ~/.bashrc
-cat .bashrc
+nano .bashrc
+PATH="$PATH:~/kafka_2.13-3.9.0/bin"
 
 # Aplicar els canvis
 source ~/.bashrc
@@ -43,15 +43,12 @@ kafka-storage.sh random-uuid
 
 # Configurar directori Logs (amb el ID aleatori retornat al pas anterior)
 kafka-storage.sh format -t ID -c ~/kafka_2.13-3.9.0/config/kraft/server.properties
-#kafka-storage.sh format -t HoxuKaRXQaCKE08VkC3P5Q -c ~/kafka_2.13-3.9.0/config/kraft/server.properties
+#kafka-storage.sh format -t 55FXLmEVTuqMRdsmyiZ8VA -c ~/kafka_2.13-3.9.0/config/kraft/server.properties
 
 # Inicialitzar Kafka en deamon mode
 kafka-server-start.sh ~/kafka_2.13-3.9.0/config/kraft/server.properties
 
 ############## Fini inici Kafka ##############
-
-# Installing VS Code Server for Linux x64
-code .
 
 # En cas de voler executar  jupyther notebook desde visual code en entorn (ubuntu)
 sudo apt update
@@ -84,8 +81,9 @@ source myenv/bin/activate
 pip3 install kafka
 pip3 install --upgrade --force-reinstall kafka-python six
 pip3 install requests
-pip3 install numpy
-
+pip3 install setuptools # eror pandas no module named 'distutils'
+pip3 install pandas
+pip3 install spark-nlp==5.5.3
 
 
 # https://sparkbyexamples.com/pyspark/pyspark-importerror-no-module-named-py4j-java-gateway-error/
@@ -127,7 +125,7 @@ hadoop version
 # Validem HDFS llistant el directori
 hdfs dfs -ls /
 
-# Descargem Hive i instal.lem 
+# Descargem Hive i instal.lem
 wget https://downloads.apache.org/hive/hive-4.0.1/apache-hive-4.0.1-bin.tar.gz
 tar -xzvf apache-hive-4.0.1-bin.tar.gz
 sudo mv apache-hive-4.0.1-bin /usr/local/hive
@@ -201,7 +199,7 @@ PasswordAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
 
 #Reiniciar servei SSH
-sudo systemctl restart ssh
+sudo systemctl restart sshd
 
 ------------------INICI Conf Hadoop----------------------------
 # https://medium.com/@madihaiqbal606/apache-hadoop-3-3-6-installation-on-ubuntu-22-04-2-lts-wsl-for-windows-bb57ed599bc6
@@ -218,11 +216,11 @@ sudo nano $HADOOP_HOME/etc/hadoop/core-site.xml
 
 # Afegir les seguents lines entre <Configuration> </Configuration>
 <configuration>
- <property>
-      <name>fs.defaultFS</name>
-      <value>hdfs://0.0.0.0:9000</value>
-      <description> El URI del sistema de archivos predeterminado</description>
-   </property>
+ <propiedad>
+      <nombre>fs.defaultFS</nombre>
+      <valor>hdfs://0.0.0.0:9000</valor>
+      <descripción> El URI del sistema de archivos predeterminado</descripción>
+   </propiedad>
    <property>
       <name>fs.default.name</name>
       <value>hdfs://0.0.0.0:9000</value>
@@ -283,12 +281,11 @@ start-yarn.sh
 jps
 # S'ha de veure així:
 """
-9337 NodeManager
-8761 DataNode
-8633 NameNode
-9210 ResourceManager
-9692 Jps
-8988 SecondaryNameNode
+2496 ResourceManager
+2625 NodeManager
+2083 DataNode
+2279 SecondaryNameNode
+2987 Jps
 1309 Kafka
 """
 
@@ -301,8 +298,6 @@ Step 8: Access the Hadoop Resource Manager:
 http://localhost:8088
 
 ---------Fi Conf Hadoop--------------------
-
-....................................AQUÍ..................................
 
 # descarregar manual i moure a spark/jars pel consumidor kafka desde pyspark
 """descarregar de:
@@ -402,3 +397,8 @@ hive --service hiveserver2 &
 localhost:10000
 tfm
 directquery
+
+
+# llibre Apache hive handbook: query, analyze and optimize Big data
+# 2.3 Seting up the hivemetastor (mysql-server) because it suports more than one 
+sudo apt install mysql-server

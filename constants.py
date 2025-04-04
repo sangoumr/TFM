@@ -10,10 +10,11 @@ LANGUAGE_TRANSLATION = "en"
 ISO_CODES_NO_TRANSLATION = ["gb","us"]
 HEADERS = ["iso_code", "title", "description", "lang_tranlation", "title_translated", "description_translated", "pubDate"] # Cols del csv de news
 HEADERS_OLD_NEWS = ["iso_code", "title", "description", "pubDate"]
-NEWS_US = "10" # Number of news to download every day for US
+NEWS_US = "20" # Number of news to download every day for US
 NEWS_UE_COUNTRIES = "10" # Number of news to download every day for UE country
 BOOTSTRAP_SERVER= ['localhost:9092'] # Kafka
-TOPIC_NAME_UE = 'news_ue'
-TOPIC_NAME_US = 'news_us' 
-TOPICS_LIST = [TOPIC_NAME_UE, TOPIC_NAME_US]
+TOPIC_NAME = 'last_news' 
+TOPICS_LIST = [TOPIC_NAME]
 CHAR_LIMIT_TRANSLATE = 2500
+
+
