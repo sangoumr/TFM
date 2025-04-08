@@ -16,5 +16,8 @@ BOOTSTRAP_SERVER= ['localhost:9092'] # Kafka
 TOPIC_NAME = 'last_news' 
 TOPICS_LIST = [TOPIC_NAME]
 CHAR_LIMIT_TRANSLATE = 2500
-
+NER_EXCLUDE = ".*-(PER|ORG|LOC)"
+EXCLUDE_WORDS= "^(www|http|https|telnet|mailto|ftps|monday|tuesday|wednesday|thursday|friday|saturday|sunday|" \
+    "january|february|march|april|may|june|july|august|september|october|november|december|year|week|day)"
+LIMIT_WORD_COUNT_DAY = 20
 

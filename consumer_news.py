@@ -1,7 +1,7 @@
 from kafka import KafkaConsumer
 from pyspark import SparkConf, SparkContext, SQLContext, HiveContext
 from pyspark.sql import SparkSession
-from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+from pyspark.sql.types import StructType, StructField, StringType
 import ast
 from pyspark.sql.functions import to_timestamp
 from constants import *
@@ -42,7 +42,7 @@ try:
             for msg in records:  # Iterar sobre los mensajes de cada partición
                 row = msg.value.decode('utf-8')
                 news_list.append(ast.literal_eval(row))
-                print(f"Datos recibidos: {row}")
+                #print(f"Datos recibidos: {row}")
             # create df of new list news
             df = spark.createDataFrame(news_list, schema=schema_news)
             

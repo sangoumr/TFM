@@ -249,6 +249,10 @@ sudo nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml
    <property>
       <name>dfs.data.dir</name>
       <value>file:///home/hadoop/hdfs/datanode</value>
+   <property>
+      <name>dfs.webhdfs.enabled</name>
+      <value>true</value>
+   </property>
 </property>
 
 
@@ -281,12 +285,14 @@ start-yarn.sh
 jps
 # S'ha de veure així:
 """
-2496 ResourceManager
-2625 NodeManager
-2083 DataNode
-2279 SecondaryNameNode
-2987 Jps
-1309 Kafka
+2178 NodeManager
+1845 SecondaryNameNode
+2054 ResourceManager
+423519 Jps
+---------------229578 SparkSubmit
+811 Kafka
+1484 NameNode
+1614 DataNode
 """
 
 
@@ -298,6 +304,19 @@ Step 8: Access the Hadoop Resource Manager:
 http://localhost:8088
 
 ---------Fi Conf Hadoop--------------------
+
+# descarregar models sparknlp
+sudo apt update && sudo apt install unzip -y
+# https://sparknlp.org/2025/01/29/berttest_en.html
+#copiar a: 
+cd TFM/models
+mkdir -p ~/models_npl/berttest
+unzip berttest_en_5.5.1_3.0_1738112596101.zip -d ~/models_npl/berttest
+
+
+
+
+
 
 # descarregar manual i moure a spark/jars pel consumidor kafka desde pyspark
 """descarregar de:
