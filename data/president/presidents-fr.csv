@@ -1,10 +1,10 @@
-"Nom","Nomenament","Partit"
-"Charles de Gaulle","08/01/1959","dreta"
-"Georges Pompidou","20/06/1969","dreta"
-"Valéry Giscard d'Estaing","27/05/1974","dreta"
-"François Mitterrand","21/05/1981","esquerra"
-"Jacques Chirac","17/05/1995","dreta"
-"Nicolas Sarkozy","16/05/2007","dreta"
-"François Hollande","15/05/2012","esquerra"
-"Emmanuel Macron","14/05/2017","dreta"
-"Emmanuel Macron","14/05/2022","dreta"
+Nom,Nomenament,Partit
+Charles de Gaulle,08-01-1959,dreta
+Georges Pompidou,20-06-1969,dreta
+Valéry Giscard d'Estaing,27-05-1974,dreta
+François Mitterrand,21-05-1981,esquerra
+Jacques Chirac,17-05-1995,dreta
+Nicolas Sarkozy,16-05-2007,dreta
+François Hollande,15-05-2012,esquerra
+Emmanuel Macron,14-05-2017,dreta
+Emmanuel Macron,14-05-2022,dreta
