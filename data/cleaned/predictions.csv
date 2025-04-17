@@ -1,0 +1,380 @@
+iso_code,nom,nomenament,posicio_politica,label
+at,Bruno Kreisky,21-04-1970,esquerra,0
+at,Fred Sinowatz,24-05-1983,esquerra,0
+at,Franz Vranitzky,16-06-1986,esquerra,0
+at,Viktor Klima,28-01-1997,esquerra,0
+at,Wolfgang Schüssel,04-02-2000,dreta,1
+at,Alfred Gusenbauer,11-01-2007,esquerra,0
+at,Werner Faymann,02-12-2008,esquerra,0
+at,Christian Kern,09-05-2016,esquerra,0
+at,Sebastian Kurz,18-12-2017,dreta,1
+at,Brigitte Bierlein,03-06-2019,centre,2
+at,Sebastian Kurz,07-01-2020,dreta,1
+at,Alexander Schallenberg,11-10-2021,dreta,1
+at,Karl Nehammer,06-12-2021,dreta,1
+at,Alexander Schallenberg,10-01-2025,dreta,1
+at,Christian Stocker,03-03-2025,dreta,1
+be,Gaston Eyskens,17-07-1968,dreta,1
+be,Gaston Eyskens,20-01-1972,dreta,1
+be,Edmond Leburton,26-01-1973,esquerra,0
+be,Leo Tindemans,25-04-1974,dreta,1
+be,Leo Tindemans,03-06-1977,dreta,1
+be,Paul vanden Boeynants,20-10-1978,dreta,1
+be,Wilfried Martens,03-03-1979,dreta,1
+be,Mark Eyskens,31-03-1981,dreta,1
+be,Wilfried Martens,17-12-1981,dreta,1
+be,Wilfried Martens,09-05-1988,dreta,1
+be,Wilfried Martens,29-09-1991,dreta,1
+be,Jean-Luc Dehaene,07-03-1992,dreta,1
+be,Guy Verhofstadt,12-07-1999,centre,2
+be,Guy Verhofstadt,11-07-2003,centre,2
+be,Guy Verhofstadt,21-12-2007,centre,2
+be,Yves Leterme,20-03-2008,dreta,1
+be,Herman Van Rompuy,30-12-2008,dreta,1
+be,Yves Leterme,25-11-2009,dreta,1
+be,Elio Di Rupo,06-12-2011,esquerra,0
+be,Charles Michel,11-11-2014,dreta,1
+be,Charles Michel,09-12-2018,dreta,1
+be,Herman Van Rompuy,30-12-2008,dreta,1
+be,Sophie Wilmès,27-10-2019,dreta,1
+be,Alexander De Croo,01-10-2020,centre,2
+be,Bart De Wever,03-02-2025,dreta,1
+bg,Todor Zhivkov,08-07-1971,esquerra,0
+bg,Petar Mladenov,10-11-1989,esquerra,0
+bg,Petar Mladenov,03-04-1990,esquerra,0
+bg,Zhelyu Zhelev,01-08-1990,esquerra,0
+bg,Petar Stoyanov,22-01-1997,dreta,1
+bg,Georgi Parvanov,22-01-2002,esquerra,0
+bg,Rosen Plevneliev,22-01-2012,dreta,1
+bg,Rumen Radev,22-01-2017,esquerra,0
+cy,Makarios III,26-02-1968,esquerra,0
+cy,Makarios III,18-02-1973,esquerra,0
+cy,Makarios III,07-12-1974,esquerra,0
+cy,Spyros Kyprianou,03-08-1977,dreta,1
+cy,Spyros Kyprianou,28-02-1983,dreta,1
+cy,George Vassiliou,28-02-1988,esquerra,0
+cy,Glafcos Clerides,28-02-1993,dreta,1
+cy,Glafcos Clerides,28-02-1998,dreta,1
+cy,Tassos Papadopoulos,28-02-2003,esquerra,0
+cy,Dimitris Christofias,28-02-2008,esquerra,0
+cy,Nikos Anastasiadis,28-02-2013,dreta,1
+cy,Nikos Anastasiadis,28-02-2018,dreta,1
+cy,Níkos Christodoulídis,28-02-2023,centre,2
+cz,Václav Havel,02-02-1993,esquerra,0
+cz,Václav Havel,02-02-1998,esquerra,0
+cz,Václav Klaus,07-03-2003,dreta,1
+cz,Václav Klaus,07-03-2008,dreta,1
+cz,Miloš Zeman,08-03-2013,esquerra,0
+cz,Miloš Zeman,08-03-2018,esquerra,0
+cz,Petr Pavel,09-03-2023,dreta,1
+de,Willy Brandt,22-10-1969,esquerra,0
+de,Willy Brandt,13-12-1972,esquerra,0
+de,Helmut Schmidt,06-05-1974,esquerra,0
+de,Helmut Schmidt,14-12-1976,esquerra,0
+de,Helmut Schmidt,04-11-1980,esquerra,0
+de,Helmut Kohl,04-10-1982,dreta,1
+de,Helmut Kohl,39-03-1983,dreta,1
+de,Helmut Kohl,18-02-1987,dreta,1
+de,Helmut Kohl,18-01-1991,dreta,1
+de,Helmut Kohl,17-11-1994,dreta,1
+de,Gerhard Schröder,27-10-1998,esquerra,0
+de,Gerhard Schröder,22-10-2002,esquerra,0
+de,Angela Merkel,22-11-2005,dreta,1
+de,Angela Merkel,28-10-2009,dreta,1
+de,Angela Merkel,17-12-2013,dreta,1
+de,Angela Merkel,14-10-2018,dreta,1
+de,Olaf Scholz,08-12-2021,esquerra,0
+dk,Hilmar Baunsgaard,02-02-1968,esquerra,0
+dk,Jens Otto Krag,11-10-1971,esquerra,0
+dk,Anker Jørgensen,05-10-1972,esquerra,0
+dk,Poul Hartling,19-12-1973,dreta,1
+dk,Anker Jørgensen,13-02-1975,esquerra,0
+dk,Anker Jørgensen,15-02-1977,esquerra,0
+dk,Anker Jørgensen,23-11-1979,esquerra,0
+dk,Anker Jørgensen,08-12-1981,esquerra,0
+dk,Poul Schlüter,10-09-1982,dreta,1
+dk,Poul Schlüter,08-09-1987,dreta,1
+dk,Poul Schlüter,10-05-1988,dreta,1
+dk,Poul Schlüter,12-12-1990,dreta,1
+dk,Poul Nyrup Rasmussen,25-01-1993,esquerra,0
+dk,Poul Nyrup Rasmussen,11-03-1998,esquerra,0
+dk,Anders Fogh Rasmussen,27-11-2001,dreta,1
+dk,Anders Fogh Rasmussen,08-02-2005,dreta,1
+dk,Anders Fogh Rasmussen,13-11-2007,dreta,1
+dk,Lars Løkke Rasmussen,05-04-2009,dreta,1
+dk,Helle Thorning-Schmidt,03-10-2011,esquerra,0
+dk,Lars Løkke Rasmussen,28-06-2015,dreta,1
+dk,Mette Frederiksen,27-06-2019,esquerra,0
+dk,Mette Frederiksen,01-11-2022,esquerra,0
+ee,Lennart Meri,06-10-1992,dreta,1
+ee,Lennart Meri,06-10-1996,dreta,1
+ee,Arnold Rüütel,08-10-2001,esquerra,0
+ee,Toomas Hendrik Ilves,09-10-2006,esquerra,0
+ee,Toomas Hendrik Ilves,09-10-2011,esquerra,0
+ee,Kersti Kaljulaid,10-10-2016,centre,2
+ee,Alar Karis,11-10-2021,centre,2
+es,Adolfo Suárez González,03-07-1976,dreta,1
+es,Leopoldo Calvo-Sotelo Bustelo,26-02-1981,dreta,1
+es,Felipe González Márquez,02-12-1982,esquerra,0
+es,Felipe González Márquez,24-07-1986,esquerra,0
+es,Felipe González Márquez,06-12-1989,esquerra,0
+es,Felipe González Márquez,10-07-1993,esquerra,0
+es,José María Aznar López,05-05-1996,dreta,1
+es,José María Aznar López,27-04-2000,dreta,1
+es,José Luis Rodríguez Zapatero,17-04-2004,esquerra,0
+es,José Luis Rodríguez Zapatero,12-04-2008,esquerra,0
+es,Mariano Rajoy Brey,21-12-2011,dreta,1
+es,Mariano Rajoy Brey,31-10-2016,dreta,1
+es,Pedro Sánchez Pérez-Castejón,02-06-2018,esquerra,0
+es,Pedro Sánchez Pérez-Castejón,08-01-2020,esquerra,0
+es,Pedro Sánchez Pérez-Castejón,17-11-2023,esquerra,0
+fi,Urho Kekkonen,16-03-1968,dreta,1
+fi,Urho Kekkonen,16-03-1978,dreta,1
+fi,Mauno Koivisto,27-01-1982,esquerra,0
+fi,Mauno Koivisto,27-01-1988,esquerra,0
+fi,Martti Ahtisaari,01-03-1994,esquerra,0
+fi,Tarja Halonen,01-03-2000,esquerra,0
+fi,Tarja Halonen,01-03-2006,esquerra,0
+fi,Sauli Niinistö,01-03-2012,dreta,1
+fi,Sauli Niinistö,01-03-2018,dreta,1
+fi,Alexander Stubb,01-03-2024,dreta,1
+fr,Charles de Gaulle,08-01-1959,dreta,1
+fr,Georges Pompidou,20-06-1969,dreta,1
+fr,Valéry Giscard d'Estaing,27-05-1974,dreta,1
+fr,François Mitterrand,21-05-1981,esquerra,0
+fr,Jacques Chirac,17-05-1995,dreta,1
+fr,Nicolas Sarkozy,16-05-2007,dreta,1
+fr,François Hollande,15-05-2012,esquerra,0
+fr,Emmanuel Macron,14-05-2017,dreta,1
+fr,Emmanuel Macron,14-05-2022,dreta,1
+gb,Harold Wilson,04-03-1974,esquerra,0
+gb,James Callaghan,05-04-1976,esquerra,0
+gb,Margaret Thatcher,04-05-1979,dreta,1
+gb,John Major,28-11-1990,dreta,1
+gb,Tony Blair,02-05-1997,esquerra,0
+gb,Gordon Brown,27-06-2007,esquerra,0
+gb,David Cameron,11-05-2010,dreta,1
+gb,Theresa May,13-07-2016,dreta,1
+gb,Boris Johnson,24-07-2019,dreta,1
+gb,Liz Truss,06-09-2022,dreta,1
+gb,Rishi Sunak,25-10-2022,dreta,1
+gb,Keir Starmer,05-07-2024,esquerra,0
+gr,Michael Stasinopulos,18-12-1974,dreta,1
+gr,Konstantinos Tsatsos,19-07-1975,dreta,1
+gr,Konstantinos Karamanlís,10-05-1980,dreta,1
+gr,Christos Sartzetakis,30-03-1985,esquerra,0
+gr,Konstantinos Karamanlís,05-05-1990,dreta,1
+gr,Konstantinos Stephanópulos,10-03-1995,dreta,1
+gr,Konstantinos Stephanópulos,10-03-2000,dreta,1
+gr,Karolos Papoulias,12-03-2005,esquerra,0
+gr,Karolos Papoulias,12-03-2010,esquerra,0
+gr,Prokopis Pavlópoulos,13-03-2015,dreta,1
+gr,Katerina Sakellaropoulou,13-03-2020,esquerra,0
+gr,Konstantinos Tasoulas,13-03-2025,dreta,1
+hr,Jakov Blažević,01-06-1967,esquerra,0
+hr,Ivo Perišin,01-04-1974,esquerra,0
+hr,Jakov Blažević,08-05-1974,esquerra,0
+hr,Marijan Cvetković,01-05-1982,esquerra,0
+hr,Milutin Baltić,01-05-1983,esquerra,0
+hr,Jakša Petrić,10-05-1984,esquerra,0
+hr,Pero Car,10-05-1985,esquerra,0
+hr,Ema Derossi-Bjelajac,20-11-1985,esquerra,0
+hr,Ante Marković,10-05-1986,esquerra,0
+hr,Ivo Latin,01-05-1988,esquerra,0
+hr,Franjo Tuđman,30-05-1990,dreta,1
+hr,Stjepan Mesić,18-02-2000,esquerra,0
+hr,Ivo Josipović,18-02-2010,esquerra,0
+hr,Kolinda Grabar-Kitarović,19-02-2015,dreta,1
+hr,Zoran Milanović,19-02-2020,esquerra,0
+hu,Árpád Göncz,02-05-1990,esquerra,0
+hu,Árpád Göncz,04-08-1995,esquerra,0
+hu,Ferenc Mádl,04-08-2000,dreta,1
+hu,László Sólyom,05-08-2005,dreta,1
+hu,Pál Schmitt,06-08-2010,dreta,1
+hu,János Áder,10-05-2012,dreta,1
+hu,János Áder,10-05-2017,dreta,1
+hu,Katalin Novák,10-05-2022,dreta,1
+hu,Tamás Sulyok,05-03-2024,centre,2
+ie,Erskine Hamilton Childers,25-06-1973,dreta,1
+ie,Cearbhall Ó Dálaigh,18-11-1974,centre,2
+ie,Patrick Hillery,03-12-1976,dreta,1
+ie,Patrick Hillery,03-12-1983,dreta,1
+ie,Mary Robinson,03-12-1990,esquerra,0
+ie,Mary McAleese,11-11-1997,dreta,1
+ie,Mary McAleese,11-11-2004,dreta,1
+ie,Michael D. Higgins,11-11-2011,esquerra,0
+ie,Michael D. Higgins,11-11-2018,esquerra,0
+it,Giovanni Leone,29-12-1971,dreta,1
+it,Sandro Pertini,09-07-1978,esquerra,0
+it,Francesco Cossiga,03-07-1985,dreta,1
+it,Oscar Luigi Scalfaro,28-05-1992,dreta,1
+it,Carlo Azeglio Ciampi,18-05-1999,centre,2
+it,Giorgio Napolitano,15-05-2006,esquerra,0
+it,Giorgio Napolitano,15-05-2013,esquerra,0
+it,Sergio Mattarella,03-02-2015,esquerra,0
+it,Sergio Mattarella,03-02-2022,esquerra,0
+lt,Vytautas Landsbergis,11-03-1990,dreta,1
+lt,Algirdas Brazauskas,25-11-1992,esquerra,0
+lt,Valdas Adamkus,26-02-1998,centre,2
+lt,Rolandas Paksas,26-02-2003,dreta,1
+lt,Valdas Adamkus,12-07-2004,centre,2
+lt,Dalia Grybauskaitė,12-07-2009,centre,2
+lt,Gitanas Nausėda,12-07-2019,centre,2
+lu,Pierre Werner,06-02-1969,dreta,1
+lu,Gaston Thorn,15-06-1974,centre,2
+lu,Pierre Werner,16-0y-1979,dreta,1
+lu,Jacques Santer,28-06-1984,dreta,1
+lu,Jacques Santer,28-06-1989,dreta,1
+lu,Jacques Santer,28-06-1994,dreta,1
+lu,Jean-Claude Juncker,20-01-1995,dreta,1
+lu,Jean-Claude Juncker,07-08-1999,dreta,1
+lu,Jean-Claude Juncker,31-07-2004,dreta,1
+lu,Xavier Bettel,04-12-2013,centre,2
+lu,Xavier Bettel,04-12-2018,centre,2
+lu,Luc Frieden,17-11-2023,dreta,1
+lv,Anatolijs Gorbunovs,04-05-1990,dreta,1
+lv,Guntis Ulmanis,08-07-1993,dreta,1
+lv,Vaira Vīķe-Freiberga,08-07-1999,centre,2
+lv,Vaira Vīķe-Freiberga,08-07-2003,centre,2
+lv,Valdis Zatlers,08-07-2007,centre,2
+lv,Andris Bērziņš,08-07-2011,dreta,1
+lv,Raimonds Vējonis,08-07-2015,dreta,1
+lv,Egils Levits,08-07-2019,centre,2
+lv,Edgars Rinkēvičs,08-07-2023,dreta,1
+mt,Anthony Mamo,13-12-1974,dreta,1
+mt,Anton Buttigieg,27-12-1976,esquerra,0
+mt,Agatha Barbara,15-02-1982,esquerra,0
+mt,Ċensu Tabone,04-04-1989,dreta,1
+mt,Ugo Mifsud Bonnici,04-04-1994,dreta,1
+mt,Guido de Marco,04-04-1999,dreta,1
+mt,Eddie Fenech Adami,04-04-2004,dreta,1
+mt,George Abela,04-04-2009,esquerra,0
+mt,Marie-Louise Coleiro Preca,04-04-2014,esquerra,0
+mt,George Vella,04-04-2019,esquerra,0
+mt,Myriam Spiteri Debono,04-04-2024,esquerra,0
+nl,Piet de Jong,05-04-1967,dreta,1
+nl,Barend Biesheuvel,06-07-1971,dreta,1
+nl,Joop den Uyl,11-05-1973,esquerra,0
+nl,dries van Agt,19-12-1977,dreta,1
+nl,dries van Agt,11-09-1981,dreta,1
+nl,Ruud Lubbers,04-11-1982,dreta,1
+nl,Ruud Lubbers,21-05-1986,dreta,1
+nl,Ruud Lubbers,07-11-1989,dreta,1
+nl,Wim Kok,22-08-1994,esquerra,0
+nl,Wim Kok,22-08-1998,esquerra,0
+nl,Jan Peter Balkenende,22-07-2002,dreta,1
+nl,Jan Peter Balkenende,27-05-2003,dreta,1
+nl,Jan Peter Balkenende,22-02-2007,dreta,1
+nl,Mark Rutte,14-10-2010,dreta,1
+nl,Mark Rutte,05-11-2012,dreta,1
+nl,Mark Rutte,26-10-2017,dreta,1
+nl,Mark Rutte,17-05-2021,dreta,1
+nl,Dick Schoof,02-07-2024,centre,2
+pl,Wojciech Jaruzelski,01-01-1990,esquerra,0
+pl,Lech Wałęsa,22-12-1990,centre,2
+pl,Aleksander Kwaśniewski,23-12-1995,esquerra,0
+pl,Aleksander Kwaśniewski,23-12-2000,esquerra,0
+pl,Lech Kaczyński,23-12-2005,dreta,1
+pl,Bronisław Komorowski,06-08-2010,centre,2
+pl,Andrzej Duda,06-08-2015,dreta,1
+pl,Andrzej Duda,06-08-2020,dreta,1
+pt,António Ramalho Eanes,14-07-1976,centre,2
+pt,António Ramalho Eanes,07-12-1980,centre,2
+pt,Mário Soares,09-03-1986,esquerra,0
+pt,Mário Soares,09-03-1991,esquerra,0
+pt,Jorge Sampaio,09-03-1996,esquerra,0
+pt,Jorge Sampaio,09-03-2001,esquerra,0
+pt,Aníbal Cavaco Silva,09-03-2006,dreta,1
+pt,Aníbal Cavaco Silva,09-03-2011,dreta,1
+pt,Marcelo Rebelo de Sousa,09-03-2016,dreta,1
+pt,Marcelo Rebelo de Sousa,09-03-2021,dreta,1
+ro,Nicolae Ceaușescu,28-03-1974,esquerra,0
+ro,Nicolae Ceaușescu,28-03-1980,esquerra,0
+ro,Nicolae Ceaușescu,28-03-1985,esquerra,0
+ro,Ion Iliescu,26-12-1989,esquerra,0
+ro,Ion Iliescu,26-12-1992,esquerra,0
+ro,Emil Constantinescu,26-11-1996,dreta,1
+ro,Ion Iliescu,20-12-2000,esquerra,0
+ro,Traian Băsescu,20-12-2004,dreta,1
+ro,Traian Băsescu,23-05-2007,dreta,1
+ro,Traian Băsescu,23-05-2009,dreta,1
+ro,Traian Băsescu,27-08-2012,dreta,1
+ro,Klaus Iohannis,21-12-2014,dreta,1
+ro,Klaus Iohannis,21-12-2019,dreta,1
+ro,Ilie Bolojan,12-02-2025,dreta,1
+se,Olof Palme,14-10-1969,esquerra,0
+se,Olof Palme,14-10-1970,esquerra,0
+se,Olof Palme,14-10-1973,esquerra,0
+se,Thorbjörn Fälldin,08-10-1976,dreta,1
+se,Ola Ullsten,18-10-1978,dreta,1
+se,Thorbjörn Fälldin,12-10-1979,dreta,1
+se,Olof Palme,08-10-1982,esquerra,0
+se,Ingvar Carlsson,28-02-1986,esquerra,0
+se,Carl Bildt,04-10-1991,dreta,1
+se,Ingvar Carlsson,07-10-1994,esquerra,0
+se,Göran Persson,22-03-1996,esquerra,0
+se,Fredrik Reinfeldt,06-10-2006,dreta,1
+se,Fredrik Reinfeldt,06-10-2010,dreta,1
+se,Stefan Löfven,03-10-2014,esquerra,0
+se,Magdalena Andersson,30-11-2021,esquerra,0
+se,Ulf Kristersson,18-10-2022,dreta,1
+si,Milan Kučan,23-12-1991,esquerra,0
+si,Milan Kučan,22-11-1992,esquerra,0
+si,Milan Kučan,22-11-1997,esquerra,0
+si,Janez Drnovšek,22-12-2002,centre,2
+si,Danilo Türk,23-12-2007,esquerra,0
+si,Borut Pahor,22-12-2012,esquerra,0
+si,Borut Pahor,22-11-2017,esquerra,0
+si,Nataša Pirc Musar,23-12-2022,centre,2
+sk,Michal Kováč,02-03-1993,esquerra,0
+sk,Rudolf Schuster,15-06-1999,esquerra,0
+sk,Ivan Gašparovič,15-06-2004,dreta,1
+sk,Ivan Gašparovič,15-06-2009,dreta,1
+sk,Andrej Kiska,15-06-2014,centre,2
+sk,Zuzana Čaputová,15-06-2019,esquerra,0
+sk,Peter Pellegrini,15-06-2024,esquerra,0
+us,Richard Nixon,20-01-1969,dreta,1
+us,Richard Nixon,20-01-1973,dreta,1
+us,Gerald Ford,09-08-1974,dreta,1
+us,Jimmy Carter,20-01-1977,esquerra,0
+us,Ronald Reagan,20-01-1981,dreta,1
+us,Ronald Reagan,20-01-1985,dreta,1
+us,George H. W. Bush,20-01-1989,dreta,1
+us,Bill Clinton,20-01-1993,esquerra,0
+us,Bill Clinton,20-01-1997,esquerra,0
+us,George W. Bush,20-01-2001,dreta,1
+us,George W. Bush,20-01-2005,dreta,1
+us,Barack Obama,20-01-2009,esquerra,0
+us,Barack Obama,20-01-2013,esquerra,0
+us,Donald Trump,20-01-2017,dreta,1
+us,Joe Biden,20-01-2021,esquerra,0
+us,Donald Trump,20-01-2025,dreta,1
+at,PREDICTION,2025-04-17,dreta,1
+be,PREDICTION,2025-04-17,dreta,1
+bg,PREDICTION,2025-04-17,dreta,1
+cy,PREDICTION,2025-04-17,dreta,1
+cz,PREDICTION,2025-04-17,dreta,1
+de,PREDICTION,2025-04-17,dreta,1
+dk,PREDICTION,2025-04-17,dreta,1
+ee,PREDICTION,2025-04-17,dreta,1
+es,PREDICTION,2025-04-17,dreta,1
+fi,PREDICTION,2025-04-17,dreta,1
+fr,PREDICTION,2025-04-17,dreta,1
+gb,PREDICTION,2025-04-17,dreta,1
+gr,PREDICTION,2025-04-17,dreta,1
+hr,PREDICTION,2025-04-17,esquerra,0
+hu,PREDICTION,2025-04-17,esquerra,0
+ie,PREDICTION,2025-04-17,dreta,1
+it,PREDICTION,2025-04-17,dreta,1
+lt,PREDICTION,2025-04-17,dreta,1
+lu,PREDICTION,2025-04-17,dreta,1
+lv,PREDICTION,2025-04-17,dreta,1
+mt,PREDICTION,2025-04-17,dreta,1
+nl,PREDICTION,2025-04-17,dreta,1
+pl,PREDICTION,2025-04-17,esquerra,0
+pt,PREDICTION,2025-04-17,dreta,1
+ro,PREDICTION,2025-04-17,esquerra,0
+se,PREDICTION,2025-04-17,dreta,1
+si,PREDICTION,2025-04-17,dreta,1
+sk,PREDICTION,2025-04-17,dreta,1
+us,PREDICTION,2025-04-17,dreta,1
