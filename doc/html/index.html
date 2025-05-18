@@ -153,6 +153,17 @@ Repository description</h1>
 <li><code>/data/pais-us.csv</code>: Fitxer CSV que conté els codi ISO dels Estats Units, i els codis ISO de les llengües que fan servir.</li>
 <li><code>/data/president/presidents-**.csv</code>: Files with presidents since approximately 1970, of each country ** (ISO country code), with the name, date of appointment, and political position of which they belonged or belong.</li>
 </ul>
+<p>The CSV files in the following paths are the result of the project execution:</p>
+<ul>
+<li><code>/data/cleaned/*.csv</code>: Generated when <a class="el" href="namespacemain_1_1py.html" title="Download all last news (only yesterday news because API are free) from countries defined and send to ...">main.py</a> is executed and used for the Power BI visualization "Geopolitical Trend in Real Time.pbix".</li>
+<li><code>/data/news/*.csv</code>: Local copy of the news downloaded daily and translated into English. These are also injected into HDFS during the same <a class="el" href="namespacemain_1_1py.html" title="Download all last news (only yesterday news because API are free) from countries defined and send to ...">main.py</a> execution for processing.</li>
+<li><code>/data/old_news/*.csv</code>: Local copy of the old news downloaded, which are also injected into HDFS during the <a class="el" href="namespaceget__old__news__us_1_1py.html" title="Download old news from API New York Times save on local and also in hdfs an proces them using nlp.">get_old_news_us.py</a> execution for processing.</li>
+</ul>
+<p>Samples of executions:</p>
+<ul>
+<li><code>/sample_log/main_log.txt</code>: Contains a sample of prints during <a class="el" href="namespacemain_1_1py.html" title="Download all last news (only yesterday news because API are free) from countries defined and send to ...">main.py</a> execution.</li>
+<li><code>/sample_log/train_log.txt</code>: Contains a sample of prints during <a class="el" href="namespacetrain__model_1_1py.html" title="Train the Logistic Regression, and Naive Bayes prediction model as a base, with old news from the New...">train_model.py</a> execution.</li>
+</ul>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Project configuration for execution</h1>
 <ol type="1">
