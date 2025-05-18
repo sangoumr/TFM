@@ -63,6 +63,11 @@ The CSV files in the following paths are the result of the project execution:
 - `/data/news/*.csv`: Local copy of the news downloaded daily and translated into English. These are also injected into HDFS during the same main.py execution for processing.
 - `/data/old_news/*.csv`: Local copy of the old news downloaded, which are also injected into HDFS during the get_old_news_us.py execution for processing.
 
+Samples of executions:
+
+- `/sample_log/main_log.txt`: Contains a sample of prints during main.py execution.
+- `/sample_log/train_log.txt`: Contains a sample of prints during train_model.py execution.
+
 ## Project configuration for execution
 
 1. Set up the environment and start the services by following the instructions in the file:
