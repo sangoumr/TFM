@@ -1,6 +1,6 @@
 ##
 # @package get_news.py
-# Get ISO CODES, download news from both API for all countries in iso codes list,save them into
+# Get ISO CODES, download news from both API for all countries in iso codes list, save them into
 # each county file as csv, and call producer to send news into broker.
 import os
 import csv
@@ -131,7 +131,7 @@ def get_dayli_news(producer)->dict:
                             recompte[country_code][1] += 1
 
                         news_line = [country_code, news['title'], news['description'],
-                                     LANGUAGE_TRANSLATION, title_translated, 
+                                     LANGUAGE_TRANSLATION, title_translated,
                                      desc_translated, news['pubDate']]
 
                         writer.writerow(news_line)

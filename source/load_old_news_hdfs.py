@@ -2,7 +2,7 @@
 # @package load_old_news_hdfs.py
 # Load old news into Hadoop's distributed system files, in parquet format with following schema,
 # limiting daily news to be loaded to 10, this setting can be changed in the constant file:
-# OLD_NEWS_DAY.
+# OLD_NEWS_DAY. Also call function classify_news to get summary concerns.
 #
 # schema_old_news = StructType([
 #    StructField("iso_code", StringType(), True),
@@ -16,17 +16,20 @@ import pyspark.sql.functions as F
 from pyspark.sql.functions import col, to_date, to_timestamp
 from pyspark.sql.types import StructType, StructField, StringType
 from TFM.source.constants import OLD_NEWS_DAY, PATH_HDFS_OLD_NEWS
+from TFM.source.classification_news import classify_news
 
 ##
 # @brief Load old news from local to HDFS.
 # @details Load old news into Hadoop's distributed system files, in parquet format with the
 # following scheme, limiting daily news to be loaded to 10, this setting can be changed in
-# the constant file: OLD_NEWS_DAY.
+# the constant file: OLD_NEWS_DAY. Also call function classify_news to get summary concerns.
 #
-# @param my_pspark (SparkSession): Spark sesion.
+# @param my_spark (SparkSession): Spark sesion.
 def load_old_news_filtered(my_spark)->None:
     """ Load old New York Times news from local to hdfs as parquet in the old news directory,
-        with next schema.
+        with next schema. Load old news into Hadoop's distributed system files, in parquet format with the
+        following scheme, limiting daily news to be loaded to 10, this setting can be changed in
+        the constant file: OLD_NEWS_DAY. Also call function classify_news to get summary concerns.
 
             schema_old_news = StructType([
                 StructField("iso_code", StringType(), True),
@@ -36,7 +39,7 @@ def load_old_news_filtered(my_spark)->None:
             ])
 
      Args:
-        my_pspark (SparkSession): Spark sesion.        
+        my_spark (SparkSession): Spark sesion.        
     """
 
     try:
@@ -80,11 +83,9 @@ def load_old_news_filtered(my_spark)->None:
             print("## Total news: ",df_final.count())
             df_final.write.mode("append").parquet(PATH_HDFS_OLD_NEWS)
 
-        print('Old news have been load from local to hdfs.')
+            classify_news(df_final, "title", "description")
 
-    except KeyboardInterrupt:
-        my_spark.stop()
-        pass
+        print('##Old news have been load from local to hdfs.')
+
     except Exception as e:
-        my_spark.stop()
         print('ERROR - loading old news in hdfs: ',e)

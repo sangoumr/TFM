@@ -5,10 +5,93 @@
 # The features will be all tokens of each day for country, from last appointment to next one, or
 # today for last news, including calculatd weight (weight up if day of news are close next
 # appointment in old news, or today for last news) and the labels will be the political position.
+import os
+import subprocess
+import pandas as pd
 import pyspark.sql.functions as F
 from pyspark.sql.dataframe import DataFrame
 from pyspark.sql.window import Window
-from TFM.source.constants import FILE_PRESI, PATH_HDFS_NEWS_CLEANED
+from TFM.source.constants import (
+    FILE_PRESI,
+    PATH_HDFS_NEWS_CLEANED,
+    DAYS_DIF_FROM_ELECTIONS,
+    PATH_PRESIDENTS
+    )
+
+##
+# @brief Combine files of presidents of each country in one
+# @details to use when generate dataset to train model and to predict, in case some country had new
+# election and consequently new president.
+#
+# @return none.
+def combine_files_presidents() -> None:
+    """ Combine files of presidents of each country in one, to use when generate dataset to train
+        model and to predict, in case some country had new election and consequently new president.
+    """
+
+    try:
+        # Get list of files name presidents in local directory.
+        list_file_presi = subprocess.check_output("ls "+PATH_PRESIDENTS+ \
+                                                "presidents-* | awk '{print $NF}'",
+                                                    shell=True).decode("utf-8").splitlines()
+
+        # list to add DataFrames
+        dfs = []
+
+        for fitxer in list_file_presi:
+            # Read file presidents of country.
+            df = pd.read_csv(fitxer)
+
+            # ADD iso code.
+            codi_iso = os.path.basename(fitxer).split("-")[1].split(".")[0]
+            df.insert(0, "pais_iso", codi_iso)
+
+            # Rename columns to normalize.
+            df.rename(columns={"pais_iso":"iso_code",
+                            "Nom": "nom",
+                            "Nomenament": "nomenament",
+                            "Partit": "posicio_politica"}, inplace=True)
+
+            dfs.append(df)
+
+        # Merge all DataFrames.
+        df_total = pd.concat(dfs, ignore_index=True)
+
+        # Show unique values to check.
+        #valors_distints = df_total['posicio_politica'].unique()
+        #print(valors_distints)
+
+        # To lower.
+        df_total['posicio_politica'] = df_total['posicio_politica'].str.lower()
+
+        # Replace inconsistent data to unify.
+        df_total['posicio_politica'] = df_total['posicio_politica'].replace({
+            'eesquerra': 'esquerra',
+            'independente': 'centre',
+            'independent': 'centre',
+            'derecha': 'dreta',
+            'centre': 'centre',
+            'cento': 'centre',
+            'cente': 'centre',
+        })
+
+        # Show unique values to check.
+        #valors_distints = df_total['posicio_politica'].unique()
+        #print(valors_distints)
+        #print(df_total.tail())
+
+        # Discretize the column 'political_position'.
+        mapping = {'esquerra': 0, 'dreta': 1, 'centre': 2}
+        df_total['label'] = df_total['posicio_politica'].map(mapping)
+
+        # Save combined presidents of all countries CSV
+        df_total.to_csv(FILE_PRESI, index=False)
+
+        print(f"\n ## Dimensions of combined presidents file for all countries: {df_total.shape}")
+
+    except Exception as e:
+        print('ERROR - Combine presidents files: ',e)
+
 
 ##
 # @brief Prepare dataset of old news for US to train model to prodecit political position.
@@ -25,12 +108,12 @@ from TFM.source.constants import FILE_PRESI, PATH_HDFS_NEWS_CLEANED
 def get_dataset_old_news_weight(my_spark, path_hdfs_news: str, iso_code: str = 'us') -> DataFrame:
     """ Prepare dataset of old news for US to train model to prodecit political position.
         Filter news by pubDate from last appointment (presidential elections) date for each country
-        to next one, add same label of last appointment and weight, where Weight will be upp if the publication
-        date is close to the next appointment. Calculate based on the number of
+        to next one, add same label of last appointment and weight, where Weight will be upp if the
+        publication date is close to the next appointment. Calculate based on the number of
         days presidential elections.
 
     Args:
-        my_spark (_type_): my_pspark (SparkSession): Spark sesion.
+        my_pspark (SparkSession): Spark sesion.
         path_hdfs_news (str): path where found the old news.
         iso_code (str, optional): country iso code. Defaults to 'us'.
 
@@ -39,10 +122,13 @@ def get_dataset_old_news_weight(my_spark, path_hdfs_news: str, iso_code: str = '
     """
 
     # Read presidents file to select days of US presidents and labels of political position.
+    combine_files_presidents() # combine first in case new elections
     df = my_spark.read.option("header", True).csv("file://"+FILE_PRESI)
 
     # Cast to date nomenament.
     df = df.withColumn("nomenament", F.to_date(F.col("nomenament"), "dd-MM-yyyy"))
+    # Subtract some days to exclude news from after the elections until the date of appointment.
+    df = df.withColumn("nomenament", F.date_sub(F.col("nomenament"), DAYS_DIF_FROM_ELECTIONS))
 
     # Filter USA iso code US.
     df_filtrat = df.filter(F.col("iso_code") == iso_code)
@@ -84,7 +170,7 @@ def get_dataset_old_news_weight(my_spark, path_hdfs_news: str, iso_code: str = '
         print(f"Preparing weighted samples from {date_start} to {date_end}: label: {label}")
 
         # Filter between dates range.
-        df_filtrat_data = df_old_news_cln.filter((F.col("pubDate") > F.lit(date_start)) 
+        df_filtrat_data = df_old_news_cln.filter((F.col("pubDate") > F.lit(date_start))
                                                  & (F.col("pubDate") < F.lit(date_end)))
 
         # Calculate days to next appointment.
@@ -92,7 +178,8 @@ def get_dataset_old_news_weight(my_spark, path_hdfs_news: str, iso_code: str = '
                                                                               F.col("pubDate")))
 
         # Calculate weight, more weight if close to next appointment.
-        df_ponderat = df_filtrat_data.withColumn("weight", 1 / (1 + F.col("day_to_app").cast("double")))
+        df_ponderat = df_filtrat_data.withColumn("weight", 1 / (1 + F.col("day_to_app") \
+                                                                .cast("double")))
 
         # Add label, Word Count, dates between appointments.
         df_ponderat = df_ponderat.withColumns({
@@ -139,6 +226,7 @@ def get_dataset_last_news_weight(my_spark) -> DataFrame:
     """
 
     # Read presidents file
+    combine_files_presidents() # combine first in case new elections
     df = my_spark.read.option("header", True).csv("file://"+FILE_PRESI)
 
     # Cast to date nomenament

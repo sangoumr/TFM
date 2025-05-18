@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['classification_5fnews_3a_3apy_0',['py',['../namespaceclassification__news_1_1py.html',1,'classification_news']]],
+  ['codi_1',['CODI',['../namespace_c_o_d_i.html',1,'']]],
+  ['codi_3a_3aget_5fold_5fnews_5fus_2',['get_old_news_us',['../namespace_c_o_d_i_1_1get__old__news__us.html',1,'CODI']]],
+  ['codi_3a_3amain_3',['main',['../namespace_c_o_d_i_1_1main.html',1,'CODI']]],
+  ['codi_3a_3asource_4',['source',['../namespace_c_o_d_i_1_1source.html',1,'CODI']]],
+  ['codi_3a_3asource_3a_3aclassification_5fnews_5',['classification_news',['../namespace_c_o_d_i_1_1source_1_1classification__news.html',1,'CODI::source']]],
+  ['codi_3a_3asource_3a_3aconstants_6',['constants',['../namespace_c_o_d_i_1_1source_1_1constants.html',1,'CODI::source']]],
+  ['codi_3a_3asource_3a_3aconsumer_5fnews_7',['consumer_news',['../namespace_c_o_d_i_1_1source_1_1consumer__news.html',1,'CODI::source']]],
+  ['codi_3a_3asource_3a_3aget_5fdataset_8',['get_dataset',['../namespace_c_o_d_i_1_1source_1_1get__dataset.html',1,'CODI::source']]],
+  ['codi_3a_3asource_3a_3aget_5fnews_9',['get_news',['../namespace_c_o_d_i_1_1source_1_1get__news.html',1,'CODI::source']]],
+  ['codi_3a_3asource_3a_3aload_5fold_5fnews_5fhdfs_10',['load_old_news_hdfs',['../namespace_c_o_d_i_1_1source_1_1load__old__news__hdfs.html',1,'CODI::source']]],
+  ['codi_3a_3asource_3a_3anlp_5fnews_11',['nlp_news',['../namespace_c_o_d_i_1_1source_1_1nlp__news.html',1,'CODI::source']]],
+  ['codi_3a_3asource_3a_3apredict_12',['predict',['../namespace_c_o_d_i_1_1source_1_1predict.html',1,'CODI::source']]],
+  ['codi_3a_3asource_3a_3aproducer_5fnews_13',['producer_news',['../namespace_c_o_d_i_1_1source_1_1producer__news.html',1,'CODI::source']]],
+  ['codi_3a_3asource_3a_3atranslate_14',['translate',['../namespace_c_o_d_i_1_1source_1_1translate.html',1,'CODI::source']]],
+  ['codi_3a_3atrain_5fmodel_15',['train_model',['../namespace_c_o_d_i_1_1train__model.html',1,'CODI']]],
+  ['constants_3a_3apy_16',['py',['../namespaceconstants_1_1py.html',1,'constants']]],
+  ['consumer_5fnews_3a_3apy_17',['py',['../namespaceconsumer__news_1_1py.html',1,'consumer_news']]]
+];

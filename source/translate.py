@@ -3,12 +3,11 @@
 # Translate text to english as default, using google translate requests.
 
 import requests
-from TFM.source.constants import ISO_CODES_NO_TRANSLATION,CHAR_LIMIT_TRANSLATE
+from TFM.source.constants import ISO_CODES_NO_TRANSLATION, CHAR_LIMIT_TRANSLATE
 
 ##
-# @brief _Descripció curta._
-# @details _Descripció detallada si cal._
-#
+# @brief Translate text to english as default, using google translate requests
+# 
 # @param texte (str): text of news to be translated.
 # @param source_language (list, optional): List of languages of text news, from country. Defaults to ['auto'].
 # @param dest_language (str, optional): Language to translate the text news. Defaults to 'en'.
@@ -65,4 +64,3 @@ def google_translate(texte: str, source_language: list = ['auto'], dest_language
     except Exception as e:
         print('ERROR - Coudn\'t translate: ',e, '\n URL: ',url, '\n Response: ',
               response_json_trans)
-

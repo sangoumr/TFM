@@ -1,0 +1,7 @@
+<map id="CODI.source.get_dataset.combine_files_presidents" name="CODI.source.get_dataset.combine_files_presidents">
+<area shape="rect" id="Node000001" title="Combine files of presidents of each country in one." alt="" coords="246,39,469,81"/>
+<area shape="rect" id="Node000002" href="$namespace_c_o_d_i_1_1source_1_1get__dataset.html#a8de8de98227f43c99ec18422a2daaa38" title="Prepare dataset of last news for all countries to predict next political position." alt="" coords="5,5,198,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,46,198,42,199,37,231,41"/>
+<area shape="rect" id="Node000003" href="$namespace_c_o_d_i_1_1source_1_1get__dataset.html#a8f4bd12e469cb3c3a64fbc7079085fbb" title="Prepare dataset of old news for US to train model to prodecit political position." alt="" coords="5,72,198,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,79,199,83,198,78,230,74"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="CODI.source.get_dataset.get_dataset_old_news_weight" name="CODI.source.get_dataset.get_dataset_old_news_weight">
+<area shape="rect" id="Node000001" title="Prepare dataset of old news for US to train model to prodecit political position." alt="" coords="5,5,198,48"/>
+<area shape="rect" id="Node000002" href="$namespace_c_o_d_i_1_1source_1_1get__dataset.html#a3f279dbb7e53038212954d73a32213f3" title="Combine files of presidents of each country in one." alt="" coords="246,5,469,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,24,230,24,230,29,198,29"/>
+</map>

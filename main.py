@@ -13,8 +13,8 @@ import subprocess
 from datetime import datetime
 import sparknlp
 from pyspark.sql import SparkSession
-from TFM.source.consumer_news import ini_consumer
 from TFM.source.nlp_news import nlp_proces_news
+from TFM.source.consumer_news import ini_consumer
 from TFM.source.producer_news import ini_producer
 from TFM.source.get_news import get_dayli_news
 from TFM.source.predict import predict_last_news
@@ -22,16 +22,17 @@ from TFM.source.constants import (
     NEWS_WAIT_TO_DOWNLOAD,
     FILE_NEWS_CLEANED,
     PATH_HDFS_NEWS_CLEANED,
+    PATH_HDFS_NEWS
     )
 
 if __name__ == '__main__':
 
-    # Set initial path
+    ## Set initial path
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
 
     try:
-        # Create my_spark and npl sessions.
+        ## Create my_spark and npl sessions.
         npl_spark = sparknlp.start()
         my_spark = SparkSession.builder.getOrCreate()
 
@@ -45,13 +46,13 @@ if __name__ == '__main__':
             pprint.pprint(summary)
 
             ## Start consumer.
-            print('\n## Start consumer at: ', datetime.now() )
+            print('\n## Start consumer at: ', datetime.now())
             ini_consumer(my_spark)
 
             ## Process last daily news.
             print('\n## Start NLP process at: ', datetime.now() )
-            # Get country folders created in consumer for daily news download from topic.
-            list_dirs_cntry =  subprocess.check_output("hdfs dfs -ls /TFM/news | awk '{print $NF}'",
+            ## Get country folders created in consumer for daily news download from topic.
+            list_dirs_cntry =  subprocess.check_output("hdfs dfs -ls "+PATH_HDFS_NEWS+" | awk '{print $NF}'",
                                                     shell=True).decode("utf-8").splitlines()[1:]
             nlp_proces_news(my_spark,
                             list_dirs_countries=list_dirs_cntry,

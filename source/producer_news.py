@@ -1,6 +1,6 @@
 ##
 # @package producer_news.py
-# # Contains functions to initialize producer, send message to a topic, and make record immediately available.
+# # Contains functions to initialize producer, send message to a topic, and make records immediately available.
 #
 # __More details__
 from kafka import KafkaProducer

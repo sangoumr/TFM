@@ -1,8 +1,8 @@
 ##
 # @package get_old_news_us.py
-# Download old news from API New York Times save on local and hdfs an proces them using nlp.
+# Download old news from API New York Times save on local and also in hdfs an proces them using nlp.
 #
-# save news into local csv year_month_news_us_old.csv using function get_old_news()
+# Save news into local csv year_month_news_us_old.csv using function get_old_news()
 # After that load to hdfs selectin only some news of every day, (defined in OLD_NEWS_DAY),
 # using function: load_old_news_filtered()
 # Then Process old news for training models, using function: nlp_proces_news()
@@ -86,23 +86,22 @@ try:
             time.sleep(10)
 
     # Download 4 first month of 2025.
-    for mnth in range(3,5):
+    for mnth in range(4,5):
         get_old_news('2025', str(mnth))
 
     # Create my_spark and npl sessions
     npl_spark = sparknlp.start()
     my_spark = SparkSession.builder.getOrCreate()
 
-    # Load to hdfs selecting only some news by day defined in (OLD_NEWS_DAY)
+    # Load to hdfs selecting only some news of every day defined in (OLD_NEWS_DAY)
     load_old_news_filtered(my_spark)
 
-    # Preprocess old news for training models by year.
-    for _ in range(DWL_OLD_NEWS_FROM,DWL_OLD_NEWS_TO):
-        nlp_proces_news(my_spark,
-                        list_dirs_countries=[PATH_HDFS_OLD_NEWS],
-                        col_desc='description',
-                        hdfs_file_cleaned=PATH_HDFS_OLD_NEWS_CLEANED,
-                        local_file=FILE_OLD_NEWS_CLEANED)
+    # Preprocess old news for training models.
+    nlp_proces_news(my_spark,
+                    list_dirs_countries=[PATH_HDFS_OLD_NEWS],
+                    col_desc='description',
+                    hdfs_file_cleaned=PATH_HDFS_OLD_NEWS_CLEANED,
+                    local_file=FILE_OLD_NEWS_CLEANED)
 
 
     my_spark.stop()

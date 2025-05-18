@@ -1,6 +1,6 @@
 ##
 # @package npl_news.py
-# Process news for training models and to visualize in Power BI.
+# Process news using NLP for model training and prediction, as well as for use in Power BI visualization.
 #
 import os
 import csv
@@ -14,7 +14,8 @@ from sparknlp.annotator import (
     Normalizer,
     LemmatizerModel,
     StopWordsCleaner,
-    BertForTokenClassification)
+    BertForTokenClassification
+    )
 import pyspark.sql.functions as F
 from TFM.source.constants import BERT_MODEL, NER_EXCLUDE, EXCLUDE_WORDS
 
