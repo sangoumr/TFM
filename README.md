@@ -53,10 +53,15 @@ The files contained in this repository are the following:
 * `/source/predict.py`: Predict the political position of each country's news from the last date of appointment of the president to today.
 * `/source/producer_news.py`: Contains functions to initialize producer, send message to a topic, and make records immediately available.
 * `/source/translate.py`: Translate text to english as default, using google translate requests.
-
 * `/data/paisos-ue.csv`: CSV file containing the ISO codes of each country in the European Union (including the United Kingdom), and the ISO codes of the languages ​​used in each country.
 * `/data/pais-us.csv`: Fitxer CSV que conté els codi ISO dels Estats Units, i els codis ISO de les llengües que fan servir.
 * `/data/president/presidents-**.csv`: Files with presidents since approximately 1970, of each country ** (ISO country code), with the name, date of appointment, and political position of which they belonged or belong.
+
+The CSV files in the following paths are the result of the project execution:
+
+- `/data/cleaned/*.csv`: Generated when main.py is executed and used for the Power BI visualization "Geopolitical Trend in Real Time.pbix".
+- `/data/news/*.csv`: Local copy of the news downloaded daily and translated into English. These are also injected into HDFS during the same main.py execution for processing.
+- `/data/old_news/*.csv`: Local copy of the old news downloaded, which are also injected into HDFS during the get_old_news_us.py execution for processing.
 
 ## Project configuration for execution
 
