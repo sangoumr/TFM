@@ -4,7 +4,7 @@
 
 ## Step 1 - Install Ubuntu on Windows
 
-# Instal·lar Ubuntu en Windows amb WSL obrir PowerShell y executar:
+# Instal·lar Ubuntu en Windows amb WSL obrir PowerShell i executar:
 wsl --install
 # Tancar PowerShell i obrir Ubuntu des del menú Inici de Windows.
 
@@ -19,7 +19,7 @@ wget -O - https://apt.corretto.aws/corretto.key | sudo apt-key add -
 sudo add-apt-repository 'deb https://apt.corretto.aws stable main'
 sudo apt-get update; sudo apt-get install -y java-11-amazon-corretto-jdk
 
-# Si dona problemes de DNS editar fitxer resolv.conf, i tornar a intentar instal·lar Java, modificant les línies següents per a que resolgui i per a que no reescrigui el fitxer, i descomentar-les:
+# Si dona problemes de DNS editar fitxer resolv.conf, i tornar a intentar instal·lar Java, modificant les línies següents perquè resolgui i perquè no reescrigui el fitxer, i descomentar-les:
 sudo nano /etc/resolv.conf
 [network]
 generateResolvConf = false
@@ -59,7 +59,7 @@ cat .bashrc
 # Crear nou Cluster Kafka amb ID aleatori.
 kafka-storage.sh random-uuid
 
-# Configurar directori Logs (amb el ID aleatori retornat al pas anterior).
+# Configurar directori Logs (amb l'ID aleatori retornat al pas anterior).
 kafka-storage.sh format -t ID -c ~/kafka_2.13-3.9.0/config/kraft/server.properties
 
 # Inicialitzar Kafka en deamon mode
@@ -77,7 +77,7 @@ code .
 
 ## Step 5 – (Optional) Run Jupyter Notebook in VSC
 
-# En cas de voler executar  jupyter notebook des de Visual Code en entorn (Ubuntu).
+# En cas de voler executar jupyter notebook des de Visual Code en entorn (Ubuntu).
 sudo apt update
 sudo apt install python3-ipykernel
 
@@ -93,7 +93,7 @@ wget https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz
 tar -xvzf spark-3.5.5-bin-hadoop3.tgz
 mv spark-3.5.5-bin-hadoop3 spark
 
-# Afegir variables entorn de Spark i  Python al fitxer de configuració .bashrc .
+# Afegir variables entorn de Spark i Python al fitxer de configuració .bashrc .
 echo 'export SPARK_HOME=$HOME/spark' >> ~/.bashrc
 echo 'export PATH=$SPARK_HOME/bin:$PATH' >> ~/.bashrc
 echo 'export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH' >> ~/.bashrc
@@ -128,7 +128,7 @@ wget https://downloads.apache.org/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz
 tar -xzvf hadoop-3.4.1.tar.gz
 sudo mv hadoop-3.4.1 /usr/local/hadoop
 
-# Afegir a .bashrc variables entorn Hadoop.
+# Afegir a .bashrc variables d'entorn Hadoop.
 echo 'export HADOOP_HOME=/usr/local/hadoop' >> ~/.bashrc
 echo 'export HADOOP_INSTALL=$HADOOP_HOME' >> ~/.bashrc
 echo 'export HADOOP_MAPRED_HOME=$HADOOP_HOME' >> ~/.bashrc
@@ -154,7 +154,7 @@ wget https://downloads.apache.org/hive/hive-4.0.1/apache-hive-4.0.1-bin.tar.gz
 tar -xzvf apache-hive-4.0.1-bin.tar.gz
 sudo mv apache-hive-4.0.1-bin /usr/local/hive
 
-# Afegir a .bashrc variables entorn HIVE.
+# Afegir a .bashrc variables d'entorn HIVE.
 echo 'export HIVE_HOME=/usr/local/hive' >> ~/.bashrc
 echo 'export PATH=$HIVE_HOME/bin:$PATH' >> ~/.bashrc
 # Aplicar els canvis.
@@ -209,7 +209,7 @@ sudo systemctl restart sshd
 # Configurar Java environment variables.
 # Editar fitxer Hadoop conf.
 nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
-# Descomentar línia i afegir ruta instal·lació de JAVA.
+# Descomentar línia i afegir ruta d'instal·lació de JAVA.
 export JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
 
 # Obrir core-site.xml.
@@ -269,7 +269,7 @@ sudo nano $HADOOP_HOME/etc/hadoop/yarn-site.xml
       <value>mapreduce_shuffle</value>
 </property>
 
-# Finalment validar la configuració de Hadoop el format de HDFS NameNode:
+# Finalment, validar la configuració de Hadoop el format de HDFS NameNode:
 hdfs namenode -format
 
 # Iniciar el Clúster de Hadoop:
@@ -278,7 +278,7 @@ start-dfs.sh
 # Iniciar el node mànager i els recursos mànager:
 start-yarn.sh
 
-#Verificar que els serveis estan iniciats:
+# Verificar que els serveis estan iniciats:
 jps
 # S'ha de veure així:
 """

@@ -50,7 +50,7 @@ def predict_last_news(my_spark) -> None:
         prediccions = model.transform(df_last_news_test)
 
         # Show predictions.
-        print("## Show predictions from last news (by day):")
+        print("## Show the predictions from last news (by day):")
         prediccions.show(n=5)
 
         print(f"## Show count labels and probability of predictions by country today {datetime.now()}:")
@@ -103,7 +103,7 @@ def predict_last_news(my_spark) -> None:
             "posicio_politica",
             "label"
             )
-        print(f"## Show predictions by country of today {datetime.now()}:")
+        print(f"## Show predictions by country of today: {datetime.now()}:")
         resultat_final.show(n=30)
 
         # Read presidents file and add predictions to save in local data Cleaned to use in

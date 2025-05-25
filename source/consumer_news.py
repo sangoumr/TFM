@@ -108,7 +108,7 @@ def ini_consumer(my_spark)-> None:
                                                                "yyyy-MM-dd HH:mm:ss"))
 
                     df_news_cntry.show()
-                    print(f"## Append to {code} conuntry parquet: {df_news_cntry.count()} news.\n")
+                    print(f"## Append to {code} country parquet: {df_news_cntry.count()} news.\n")
                     df_news_cntry.write.mode("append").parquet(PATH_HDFS_NEWS+"/news_"+code)
 
 

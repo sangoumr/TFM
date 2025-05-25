@@ -210,7 +210,7 @@ def get_models_weight(df_final: DataFrame) -> None:
         f1_score = evaluator_f1.evaluate(predictions)
         f1_score_period = evaluator_f1.evaluate(predictions_period)
 
-        print(f"\n## {name:<40} AUC: {auc:.4f} F1-Score: {f1_score:.4f} " \
+        print(f"\n### {name:<40} AUC: {auc:.4f} F1-Score: {f1_score:.4f} " \
               f"F1-Score-period: {f1_score_period:.4f}")
 
         print("\n## Report metrics of prediction by day:")
@@ -220,11 +220,11 @@ def get_models_weight(df_final: DataFrame) -> None:
         print(classification_report(predictions_period.select("label").rdd.flatMap(lambda x: x).collect(),
                                     predictions_period.select("prediction").rdd.flatMap(lambda x: x).collect()))
         
-        print("#Sample of prediction by days:")
+        print("## Sample of prediction by days:")
         predictions.select("iso_code", "pubDate", "label", "probability", "prediction").show(n=10)
-        print("#Sample of prediction grouped by election period and counting label predicted:")
+        print("## Sample of prediction grouped by election period and counting label predicted:")
         predictions_period_group.show(n=30)
-        print("\n#Sample of election period with label and prediction winner: ")
+        print("\n## Sample of election period with label and prediction winner: ")
         predictions_period.show(n=30)
 
         if auc > max_auc:
@@ -248,10 +248,10 @@ def get_models_weight(df_final: DataFrame) -> None:
             df_metrics = pd.DataFrame([metrics])
             df_metrics.to_csv(FILE_METRICS_BEST_MODEL, index=False)
 
-    eval_model("## Naive Bayes", False, model_nb, news_test)
-    eval_model("## Naive Bayes (CV)", True, cv_model_nb, news_test)
-    eval_model("## Logistic Regression", False, model, news_test)
-    eval_model("## Logistic Regression (CV)", True ,cv_model_l, news_test)
+    eval_model("Naive Bayes", False, model_nb, news_test)
+    eval_model("Naive Bayes (CV)", True, cv_model_nb, news_test)
+    eval_model("Logistic Regression", False, model, news_test)
+    eval_model("Logistic Regression (CV)", True ,cv_model_l, news_test)
     
 
 

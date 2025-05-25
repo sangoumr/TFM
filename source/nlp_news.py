@@ -176,20 +176,20 @@ def nlp_proces_news(my_spark, list_dirs_countries: list, col_desc: str, hdfs_fil
                 pipeline_df = pipeline_df.withColumn("tokens_n_ner",
                                                     F.arrays_zip("cleanTokens_result", "ner_result"
                                                                  ))
-                print("### 3: cleanToken and NER combined:\n",pipeline_df.columns)
+                print("### 3: CleanToken and NER combined:\n",pipeline_df.columns)
                 pipeline_df.select("iso_code","pubDate","tokens_n_ner").show(n=3, truncate=False)
 
                 pipeline_df = pipeline_df.withColumn(
                     "filtered_tokens",
                     F.expr(f"filter(tokens_n_ner, x -> NOT x.ner_result rlike '{NER_EXCLUDE}')")
                 )
-                print("### 4: ner excluded: \n",pipeline_df.columns)
+                print("### 4: NER excluded: \n",pipeline_df.columns)
                 pipeline_df.select("iso_code","pubDate","filtered_tokens").show(n=3, truncate=False)
 
                 # Convert tokens to lower.
                 pipeline_df = pipeline_df.withColumn("lower_token",
                             F.expr("transform(filtered_tokens, x -> lower(x.cleanTokens_result))"))
-                print("### 5: to lower: \n",pipeline_df.columns)
+                print("### 5: To lower: \n",pipeline_df.columns)
                 pipeline_df.select("iso_code","pubDate","lower_token").show(n=3, truncate=False)
 
                 # Exclude some words about time and www, http,...
@@ -197,14 +197,14 @@ def nlp_proces_news(my_spark, list_dirs_countries: list, col_desc: str, hdfs_fil
                     "final_token",
                     F.expr(f"filter(lower_token, x -> NOT x rlike '{EXCLUDE_WORDS}')")
                 )
-                print("### 6: filter webs (www...): \n",pipeline_df.columns)
+                print("### 6: Filter webs (www...): \n",pipeline_df.columns)
                 pipeline_df.select("iso_code","pubDate","final_token").show(n=3, truncate=False)
 
                 # Group tokens by day.
                 group_date_df = pipeline_df.groupBy(["iso_code","pubDate"]
                                                     ).agg(F.flatten(F.collect_list("final_token")
                                                                     ).alias("all_tokens"))
-                print("### 7: group tokens by day: \n",group_date_df.columns)
+                print("### 7: Group tokens by day: \n",group_date_df.columns)
                 group_date_df.show(n=3, truncate=False)
 
                 # Convert list of tokens to string  # Save new features for visualization in
@@ -214,7 +214,7 @@ def nlp_proces_news(my_spark, list_dirs_countries: list, col_desc: str, hdfs_fil
                     "pubDate",
                     F.concat_ws(" ", "all_tokens").alias("words_text")
                     )
-                print("### 8: concat tokens: \n",df_tokens_str.columns)
+                print("### 8: Concat tokens: \n",df_tokens_str.columns)
                 df_tokens_str.show(n=3, truncate=False)
 
                 # Save new features processed appening as parquet in hdfs.

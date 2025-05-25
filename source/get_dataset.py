@@ -240,7 +240,7 @@ def get_dataset_last_news_weight(my_spark) -> DataFrame:
     last_appointments = df_row_num.filter(F.col("row_num") == 1).drop("row_num")
 
     # Show sample.
-    print("## Show last appointments (presidential elections) of each country:")
+    print("## Show the last appointments (presidential elections) of each country:")
     last_appointments.show(truncate=False)
 
     # Add today's date simulating the upcoming presidential elections.
@@ -253,14 +253,14 @@ def get_dataset_last_news_weight(my_spark) -> DataFrame:
     # Cast string label to int.
     df_filtrat = df_date_diff.withColumn("label", F.col("label").cast("int"))
     # Show sample.
-    print("## Show days fom last presidential elections to today of each country:")
+    print("## Show days from last presidential elections to today of each country:")
     df_filtrat.show(n=30)
 
     # Get cleaned last news and cast PubDate to date.
     df_last_news_cln = my_spark.read.parquet(PATH_HDFS_NEWS_CLEANED)
     df_last_news_cln = df_last_news_cln.withColumn("pubDate", F.to_date(F.col("pubDate"),
                                                                       "yyyy-MM-dd"))
-    print("## Show sample of cleaned news in NLP, that will use to create weighted dataset:")
+    print("## Show the sample of cleaned news in NLP, that will be used to create a weighted dataset:")
     df_last_news_cln.show(n=5)
 
     df_final = None
